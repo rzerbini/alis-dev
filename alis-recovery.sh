@@ -393,7 +393,7 @@ function recovery() {
 function end() {
     if [ "$CHROOT" == "true" ]; then
         echo ""
-        echo "Recovery finalized. You must do a explicit reboot (./alis-reboot.sh)."
+        echo "Recovery finalized. You must do an explicit reboot (./alis-reboot.sh)."
     else
         echo ""
         echo "Recovery started. You must do an explicit reboot after finalize recovery (exit if in arch-chroot, ./alis-reboot.sh)."
