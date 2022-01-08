@@ -1730,19 +1730,19 @@ function desktop_environment_bspwm() {
 }
 
 function desktop_environment_awesome() {
-    pacman_install "awesome vicious xterm lightdm lightdm-gtk-greeter"
+    pacman_install "awesome vicious xterm lightdm lightdm-gtk-greeter xorg-server"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
 function desktop_environment_qtile() {
-    pacman_install "qtile xterm lightdm lightdm-gtk-greeter"
+    pacman_install "qtile xterm lightdm lightdm-gtk-greeter xorg-server"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
 function desktop_environment_leftwm() {
     #leftwm-git in AUR - set in alis-packages.conf
     #leftwm-theme-git in AUR - set in alis-packages.conf
-    pacman_install "dmenu xterm lightdm lightdm-gtk-greeter"
+    pacman_install "dmenu xterm lightdm lightdm-gtk-greeter xorg-server"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
