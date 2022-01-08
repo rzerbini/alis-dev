@@ -1732,7 +1732,7 @@ function desktop_environment_awesome() {
 }
 
 function desktop_environment_qtile() {
-    pacman_install "qtile lightdm lightdm-gtk-greeter"
+    pacman_install "qtile xterm lightdm lightdm-gtk-greeter"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
