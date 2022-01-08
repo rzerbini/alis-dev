@@ -1742,7 +1742,7 @@ function desktop_environment_qtile() {
 function desktop_environment_leftwm() {
     #leftwm-git in AUR - set in alis-packages.conf
     #leftwm-theme-git in AUR - set in alis-packages.conf
-    pacman_install "xterm lightdm lightdm-gtk-greeter"
+    pacman_install "dmenu xterm lightdm lightdm-gtk-greeter"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
