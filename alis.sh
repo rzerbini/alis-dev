@@ -1724,7 +1724,7 @@ function desktop_environment_bspwm() {
 }
 
 function desktop_environment_awesome() {
-    pacman_install "awesome vicious lightdm lightdm-gtk-greeter"
+    pacman_install "awesome vicious xterm lightdm lightdm-gtk-greeter"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
