@@ -91,6 +91,7 @@ function sanitize_variables() {
     PARTITION_MODE=$(sanitize_variable "$PARTITION_MODE")
     PARTITION_CUSTOMMANUAL_BOOT=$(sanitize_variable "$PARTITION_CUSTOMMANUAL_BOOT")
     PARTITION_CUSTOMMANUAL_ROOT=$(sanitize_variable "$PARTITION_CUSTOMMANUAL_ROOT")
+    FILE_SYSTEM_TYPE=$(sanitize_variable "$FILE_SYSTEM_TYPE")
 }
 
 function sanitize_variable() {
@@ -411,10 +412,6 @@ function partition() {
 }
 
 function recovery() {
-    if [ "$FILE_SYSTEM_TYPE" == "btrfs" ]; then
-        mkdir -p /mnt/proc
-        mount -t proc proc /mnt/proc
-    fi
     arch-chroot /mnt
 }
 
