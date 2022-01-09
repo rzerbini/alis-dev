@@ -1743,7 +1743,7 @@ function desktop_environment_qtile() {
 }
 
 function desktop_environment_openbox() {
-    pacman_install "openbox obconf-qt lxappearance-obconf-gtk3 lightdm lightdm-gtk-greeter xorg-server"
+    pacman_install "openbox obconf xterm lightdm lightdm-gtk-greeter xorg-server"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
