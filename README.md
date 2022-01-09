@@ -238,7 +238,6 @@ https://www.archlinux.org/download/
 * https://wiki.archlinux.org/title/NetworkManager
 * https://wiki.archlinux.org/title/Nouveau
 * https://wiki.archlinux.org/title/NVIDIA
-* https://wiki.archlinux.org/title/Openbox
 * https://wiki.archlinux.org/title/Pacman
 * https://wiki.archlinux.org/title/Partitioning
 * https://wiki.archlinux.org/title/Persistent_block_device_naming
