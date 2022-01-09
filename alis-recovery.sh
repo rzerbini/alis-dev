@@ -411,6 +411,10 @@ function partition() {
 }
 
 function recovery() {
+    if [ "$FILE_SYSTEM_TYPE" == "btrfs" ]; then
+        mkdir -p /mnt/proc
+        mount -t proc proc /mnt/proc
+    fi
     arch-chroot /mnt
 }
 
