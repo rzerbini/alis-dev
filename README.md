@@ -53,7 +53,7 @@ For new features, improvements and bugs fill an issue in GitHub or make a pull r
 * **Partition**: no LVM, LVM, LVM on LUKS, GPT on UEFI, MBR on BIOS
 * **File system**: ext4, btrfs (with subvols), xfs, f2fs, reiserfs
 * **Kernels**: linux, linux-lts, linux-hardened, linux-zen
-* **Desktop environment**: GNOME, KDE, XFCE, Mate, Cinnamon, LXDE, i3-wm, i3-gaps, Deepin, Budgie, Bspwm, Awesome, Qtile
+* **Desktop environment**: GNOME, KDE, XFCE, Mate, Cinnamon, LXDE, i3-wm, i3-gaps, Deepin, Budgie, Bspwm, Awesome, Qtile, Openbox
 * **Display managers**: GDM, SDDM, Lightdm, lxdm
 * **Graphics controller**: intel, nvidia and amd with optionally early KMS start. With intel optionally fastboot, hardware video acceleration and framebuffer compression.
 * **Bootloader**: GRUB, rEFInd, systemd-boot
@@ -85,7 +85,7 @@ For new features, improvements and bugs fill an issue in GitHub or make a pull r
 
 Download and boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>. After boot use the following commands to start the installation.
 
-Follow the <a href="https://wiki.archlinux.org/title/Arch_Linux">Arch Way</a> of doing things and learn what this script does. This will allow you to know what is happening. 
+Follow the <a href="https://wiki.archlinux.org/title/Arch_Linux">Arch Way</a> of doing things and learn what this script does. This will allow you to know what is happening.
 
 Internet connection is required, with wireless WIFI connection see <a href="https://wiki.archlinux.org/title/Wireless_network_configuration#Wi-Fi_Protected_Access">Wireless_network_configuration</a> to bring up WIFI connection before start the installation.
 
@@ -199,9 +199,10 @@ https://www.archlinux.org/download/
 * https://wiki.archlinux.org/title/ATI
 * https://wiki.archlinux.org/title/Bluetooth
 * https://wiki.archlinux.org/title/Bspwm
-* https://wiki.archlinux.org/title/Awesome
+* https://wiki.archlinux.org/title/Openbox
 * https://wiki.archlinux.org/title/Qtile
 * https://wiki.archlinux.org/title/Leftwm
+* https://wiki.archlinux.org/title/Awesome
 * https://wiki.archlinux.org/title/Btrfs
 * https://wiki.archlinux.org/title/Budgie
 * https://wiki.archlinux.org/title/Category:Boot_loaders
@@ -258,4 +259,3 @@ https://www.archlinux.org/download/
 * https://wiki.archlinux.org/title/Xfce
 * https://wiki.archlinux.org/title/XFS
 * https://wiki.archlinux.org/title/Xorg
-
