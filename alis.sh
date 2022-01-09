@@ -1752,7 +1752,7 @@ function desktop_environment_openbox() {
 
 function desktop_environment_dusk() {
     #dusk-git in AUR - set in alis-packages.conf
-    pacman_install "xterm lightdm lightdm-gtk-greeter xorg-server"
+    pacman_install "dmenu xterm lightdm lightdm-gtk-greeter xorg-server"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
