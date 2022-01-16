@@ -57,9 +57,9 @@ VIRTUALBOX=""
 VMWARE=""
 SYSTEM_INSTALLATION=""
 
-LOG="false"
-USER_NAME="picodotdev"
-USER_PASSWORD="ask"
+LOG="true"
+USER_NAME="erik"
+USER_PASSWORD="erik"
 PACKAGES_PIPEWIRE="false"
 
 RED='\033[0;31m'
