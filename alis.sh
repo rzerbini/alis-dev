@@ -83,7 +83,8 @@ function sanitize_variables() {
 
 function check_variables() {
     check_variables_value "KEYS" "$KEYS"
-    check_variables_boolean "LOG" "$LOG"
+    check_variables_boolean "LOG_TRACE" "$LOG_TRACE"
+    check_variables_boolean "LOG_FILE" "$LOG_FILE"
     check_variables_value "DEVICE" "$DEVICE"
     check_variables_boolean "DEVICE_TRIM" "$DEVICE_TRIM"
     check_variables_boolean "LVM" "$LVM"
@@ -182,7 +183,8 @@ function warning() {
 function init() {
     print_step "init()"
 
-    init_log "$LOG" "$ALIS_LOG_FILE"
+    init_log_trace "$LOG_TRACE"
+    init_log_file "$LOG_FILE" "$ALIS_LOG_FILE"
     loadkeys "$KEYS"
 }
 
@@ -521,6 +523,7 @@ function partition() {
 
 function install() {
     print_step "install()"
+    local COUNTRIES=()
 
     pacman -Sy --noconfirm archlinux-keyring
 
@@ -528,7 +531,6 @@ function install() {
         echo "Server = $PACMAN_MIRROR" > /etc/pacman.d/mirrorlist
     fi
     if [ "$REFLECTOR" == "true" ]; then
-        local COUNTRIES=()
         for COUNTRY in "${REFLECTOR_COUNTRIES[@]}"; do
             local COUNTRIES+=(--country "${COUNTRY}")
         done
@@ -550,6 +552,21 @@ function install() {
         sed -i 's/#ParallelDownloads/ParallelDownloads/' /mnt/etc/pacman.conf
     else
         sed -i 's/#ParallelDownloads\(.*\)/#ParallelDownloads\1\nDisableDownloadTimeout/' /mnt/etc/pacman.conf
+    fi
+
+    if [ "$REFLECTOR" == "true" ]; then
+        pacman_install "reflector"
+        cat <<EOT > /mnt/etc/xdg/reflector/reflector.conf
+${COUNTRIES[@]}
+--latest 25
+--age 24
+--protocol https
+--completion-percent 100
+--sort rate
+--save /etc/pacman.d/mirrorlist
+EOT
+        arch-chroot /mnt reflector "${COUNTRIES[@]}" --latest 25 --age 24 --protocol https --completion-percent 100 --sort rate --save /mnt/etc/pacman.d/mirrorlist
+        arch-chroot /mnt systemctl enable reflector.timer
     fi
 
     if [ "$PACKAGES_MULTILIB" == "true" ]; then
